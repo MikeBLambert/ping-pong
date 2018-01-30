@@ -1,57 +1,29 @@
 //Business logic
 function pingPong(a) {
   var number = parseInt(a);
-  var array = [];
+  var pingPongArray = [];
   for (var i=0; i<number; i+=1) {
     var numberToPush = number - (number - i - 1);
-    if (numberToPush % 3 === 0) {
-      array.push("Ping")
+    if ((numberToPush % 3 === 0) && (numberToPush % 5 === 0)) {
+      pingPongArray.push(" " + "Ping-Pong")
+    } else if (numberToPush % 3 === 0) {
+      pingPongArray.push(" " + "Ping")
     } else if (numberToPush % 5 === 0) {
-      array.push("Pong")
+      pingPongArray.push(" " + "Pong")
     } else {
-      array.push(numberToPush)
+      pingPongArray.push(" " + numberToPush)
     };
   };
-  console.log(array);
+  return pingPongArray.toString();
 };
-// function pingPong(a) {
-//   var number = parseInt(a);
-//   var array = [];
-//   var arrayPingPong = [];
-//   for (var i=0;i<number;i+=1) {
-//
-//     array.push(number-(number-i-1));
-//   };
-//   for (var i=0;i<number;i+=1) {
-//     if (array[i] % 3 === 0) {
-//       arrayPingPong.push("Ping")
-//     } else if (array[i] % 5 === 0) {
-//       arrayPingPong.push("Pong")
-//     } else {
-//       arrayPingPong.push(array[i])
-//     };
-//   };
 
-
-  // array.forEach(function(array) {
-  //   if (array % 3 === 0) {
-  //     return "Ping"
-  //   } else if (array[i] % 5 === 0) {
-  //     return "Pong"
-  //   } else {
-  //     return array
-  //   };
-  // });
-
-  // console.log(array);
-  // console.log(arrayPingPong);
-// };
-//User Interface logic
+//User Interface Logic
 $(document).ready(function() {
   $("#submit").submit(function(event) {
   event.preventDefault();
     var input = $("#enterNumber").val();
     var output = pingPong(input);
+    $("span#displayPingPong").show();
     $("span#displayPingPong").html(output);
   });
 });

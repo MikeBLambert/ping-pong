@@ -1,7 +1,27 @@
+body {
+  background-color: #f78527;
+}
 .container {
-  width: 50%;
+  margin: 25px;
+  padding: 25px;
+  border: 8px solid blue;
+  background-color: #4cff4c;
+}
+
+h1{
+  text-align: center;
+}
+
+span{
+  display: none;
+  border: 8px solid blue;
+  background-color: #4cff4c;
+  margin: 25px;
+  padding: 25px;
+  width: 50%
 }
 
 label {
   font-size: 25px;
+  font-weight: bold;
 }
