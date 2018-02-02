@@ -2,16 +2,15 @@
 function pingPong(a) {
   var number = parseInt(a);
   var pingPongArray = [];
-  for (var i=0; i<number; i+=1) {
-    var numberToPush = number - (number - i - 1);
-    if ((numberToPush % 3 === 0) && (numberToPush % 5 === 0)) {
+  for (var i=1; i<=number; i+=1) {
+      if ((i % 3 === 0) && (i % 5 === 0)) {
       pingPongArray.push(" " + "Ping-Pong")
-    } else if (numberToPush % 3 === 0) {
+    } else if (i % 3 === 0) {
       pingPongArray.push(" " + "Ping")
-    } else if (numberToPush % 5 === 0) {
+    } else if (i % 5 === 0) {
       pingPongArray.push(" " + "Pong")
     } else {
-      pingPongArray.push(" " + numberToPush)
+      pingPongArray.push(" " + i)
     };
   };
   return pingPongArray.toString();
